@@ -2,6 +2,7 @@
 #define RBTREE_H
 
 #include <stdbool.h>
+#include "cfs.h"
 
 /**
  * Enumeration representing the two colors.
@@ -16,7 +17,7 @@ enum Color {
 struct node {
     int val;    // the tree is sorted according to this value
     bool color;
-    void *data;
+    struct process *data;
     struct node *left;
     struct node *right;
     struct node *parent;
@@ -27,8 +28,7 @@ struct node {
  * @param val
  * @return
  */
-struct node *newNode(int val);
-
+struct node* newNode(int val);
 /**
  * Perform a left rotation
  * @param root
@@ -51,5 +51,7 @@ struct node *rotateRight(struct node *root, struct node *n);
  * @param newNode
  */
 struct node *insertRB(struct node *root, struct node *newNode);
+
+struct node *balance(struct node* root, struct node* newNode);
 
 #endif // RBTREE_H

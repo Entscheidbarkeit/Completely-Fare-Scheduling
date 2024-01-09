@@ -568,8 +568,11 @@ int main(int argc, char **argv) {
                             continue;
                         }
                         struct node *node = newNode(randValue);
+                        //printf("the to be inserted value is %d\n",randValue);
                         root = insertRB(root, node);
                         elements[i] = randValue;
+                        //iterate_in_order(root,print_val);
+                        //printf("End of this insersion\n");
                     }
 
                     char buffer[64] = {0};
@@ -630,3 +633,4 @@ int main(int argc, char **argv) {
 
     return 0;
 }
+

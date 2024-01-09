@@ -5,7 +5,7 @@
 #include "utility.h"
 
 void print_val(struct node *node) {
-    printf("node->val = %d\n", node->val);
+    printf("node->val = %d   Color is %d \n", node->val,node->color);
 }
 
 

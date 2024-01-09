@@ -6,6 +6,7 @@
 struct process {
     int PID;
     int decay;
+    int runTime;
     struct process* next;
 };
 
