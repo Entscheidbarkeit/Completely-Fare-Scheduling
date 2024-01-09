@@ -23,6 +23,7 @@ struct node* cfs(struct process* processes, int time) {
 	}
 	for (int i = 0; i < time; i++) {
 		struct node *min = minimal(root);
+		printf("Time: %d PID: %d\n",min->val,min->data->PID);
 		min->data->runTime += 10 - min->data->decay;
 		iterate_post_order(root, free_node);
 		root = NULL;
